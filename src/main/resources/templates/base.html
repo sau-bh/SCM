@@ -1,0 +1,16 @@
+<div th:fragment="parent(content)">
+<h1>Data is coming from the base.html file</h1>
+
+<!-- <h3>The value of x <span th:text="${x}"></span></h3>
+<h3>The value of y <span th:text="${y}"></span></h3> -->
+
+
+<div th:replace="${content}">It is dynamic content coming from the base.html</div>
+</div>
+
+
+<div th:fragment="test">
+
+    <h1>this is testing fragment</h1>
+
+</div>
