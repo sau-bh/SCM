@@ -1,31 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
-
+<html lang="en" th:replace="~{base :: parent (~{::#content} , ~{::#title} , ~{::script})}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-
-    <link data-th-href="@{'/css/output.css'}" rel="stylesheet">
-
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <title id="title">Home Page</title>
 </head>
-
 <body>
-    <div class="bg-gray-200 w-1/2 flex flex-col space-y-3 p-4 mx-auto">
-
-        <h1 class="font-bold text-2" data-th-text="${headline}">Home Page</h1>
-
-        <p th:text="${para}">If the paragraph is not coming from the model object print default paragraph</p>
-        <p th:replace="~{base :: parent}">Google Link: <span data-th-href="${Repo}">Click here to open</span></p>
-      <p>Click hete to open Google Link: <a th:href="${Repo}">Click here to open</a></p> 
-
-        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio id molestiae earum aut, eius velit optio
-            ab adipisci iste ipsa numquam maiores necessitatibus alias aliquid quas obcaecati, quidem officia expedita.
-        </P>
+    <div id="content">
+        <h1>Welcome to Home page</h1>
     </div>
+   
 
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script>
+        console.log("home page1")
+    </script>
+
+    
 </body>
-
 </html>

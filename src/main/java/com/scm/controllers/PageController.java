@@ -21,11 +21,26 @@ public class PageController {
         return "about";
     }
 
-    @GetMapping("/services")
+    @GetMapping("/service")
     public String servicePage(Model model){
         model.addAttribute("isLogin" , false);
        
         return "services";
     }
     
+    @GetMapping("/contact")
+    public String contactPage(){
+        return "contact";
+    }
+
+     @GetMapping("/login")
+    public String loginPage(){
+        return "login";
+    }
+
+     @GetMapping("/register")
+    public String registerPage(){
+        return "register";
+    }
 }
+
