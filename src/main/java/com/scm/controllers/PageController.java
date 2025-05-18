@@ -3,7 +3,7 @@ package com.scm.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -48,7 +48,7 @@ public class PageController {
     public String register(Model model){
         UserForm userForm  = new UserForm();
         //default data bhi dal sakte hai
-        userForm.setName("Saurabh");
+        // userForm.setName("Saurabh");
         model.addAttribute("userForm", userForm);
         
 
@@ -57,11 +57,15 @@ public class PageController {
 
     //Processing register form
     @RequestMapping(value = "/do-register" , method = RequestMethod.POST)
-    public String processRegister() {
+    public String processRegister(@ModelAttribute UserForm userForm) {
         
         System.out.println("processing registration");
         //fetch form data
+        //userForm
+        System.out.println(userForm);
+
         //validate form data
+        
         //save to database
         //msg: registration successful
         //redirect to login page
